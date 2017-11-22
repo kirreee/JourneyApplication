@@ -24,6 +24,10 @@ namespace JourneyApplication.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Errand>Errands { get; set; }
+        public DbSet<Vehicle>Vehicles { get; set; }
+
+
 
         public static ApplicationDbContext Create()
         {
