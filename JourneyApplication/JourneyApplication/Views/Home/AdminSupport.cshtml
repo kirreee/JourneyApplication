@@ -1,0 +1,40 @@
+﻿
+<script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
+<script src="~/SignalR/hubs"></script>
+<h2>UserSupport</h2>
+<hr />
+<div class="input-group start-adress-container">
+    <input type="text" id="message" class="form-control" placeholder="Skriv något..." required="">
+    <span class="input-group-btn">
+        <input type="button" id="sendmessage" value="Skicka" class="btn btn-primary" />
+    </span>
+</div>
+<hr />
+<input type="hidden" id="displayname" />
+<ul id="discussion"></ul>
+<script type="text/javascript">
+
+
+    $(function () {
+        var chat = $.connection.supportHub;
+        $.connection.hub.qs = { 'Admin': "chickens@live.se" };
+
+        chat.client.broadcastMessage = function (name, message) {
+            var encodeName = $('<div />').text(name).html();
+            var encodeMsg = $('<div />').text(message).html();
+            $('#discussion').append('<li class="list-group-item"><strong>' + encodeName
+                + '</strong>:&nbsp;&nbsp;' + encodeMsg + '</li>');
+        };
+
+        $('#displayname').val("User");
+
+        $('#message').focus();
+
+        $.connection.hub.start().done(function () {
+            $("#sendmessage").click(function () {
+                chat.server.send($('#displayname').val(), $("#message").val());
+                $("#message").val('').focus();
+            });
+        });
+    });
+</script>

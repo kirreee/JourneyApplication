@@ -1,0 +1,14 @@
+﻿<hr />
+<div class="col-sm-10">
+    <h3>Välj fordon & Datum</h3>
+    <form ng-submit="GetPdfReport()">
+        <select id="driverName"
+                ng-options="item.Id as item.RegistrationNumber for item in vehicles" ng-model="selectedVehicle" class="form-control"></select>
+        <input type="date" ng-model="fromDate" class=form-control />
+        <input type="date" ng-model="toDate" class="form-control" />
+        <hr />
+        <button type="button" ng-click="updateGraph()" class="btn btn-primary">Visa statistik</button>
+        <button type="button" ng-click="GeneratePdf();" class="btn btn-primary">Ladda ner PDF/Generera</button>
+    </form>
+</div>
+<canvas id="bar" class="chart chart-doughnut chart-colors" chart-data="data" ng-model="data" chart-labels="labels" chart-series="series"></canvas>

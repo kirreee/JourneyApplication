@@ -6,11 +6,20 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/App/Routing.js"></script>
+    <script src="~/Scripts/App/HomeController.js"></script>
+    <script src="~/Scripts/App/EditErrandController.js"></script>
+    <script src="~/Scripts/App/NavigationService.js"></script>
+    <script src="~/Scripts/App/ErrandController.js"></script>
+    <script src="~/Scripts/App/VehicleController.js"></script>
+    <script src="~/Scripts/App/EditVehicleController.js"></script>
+    <script src="~/Scripts/App/StatsController.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
+    <script src="~/Scripts/angular-chart.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
 </head>
 <body>
@@ -24,22 +33,34 @@
                 </button>
                 @Html.ActionLink("Journey", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#!/start">Home</a></li>
+                        <li ng-disabled="errands.length"><a href="#!/starterrand">Skapa resa</a></li>
+                        <li><a href="#!/fordon">Skapa fordon/fordons översikt</a></li>
+                        <li><a href="#!/stats">Statistik</a></li>
+                        <li>@Html.ActionLink("Support", "UserSupport", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
+
+                    </ul>
+
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            else
+            {
                 @Html.Partial("_LoginPartial")
-            </div>
+            }
+
         </div>
+
     </div>
     <div class="container body-content">
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

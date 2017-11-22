@@ -1,0 +1,27 @@
+﻿<p>Edit Vehicle Sidan.</p>
+<hr />
+<form class="form-horizontal">
+    <input type="hidden" id="id" ng-model="vehicle.Id" />
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Registreringsnummer">Registreringsnummer</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ng-model="vehicle.RegistrationNumber" id="RegistrationNumber" placeholder="RegistrationNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label><input ng-model="vehicle.Active " data-ng-value="true" type="checkbox" value="">Active</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label><input ng-model="vehicle.Default " data-ng-value="true" type="checkbox" value="">Default</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button ng-click="goBack();" class="btn btn-warning">Avbryt</button>
+            <button type="submit" class="btn btn-success" ng-click="updateVehicle(vehicle);">Spara</button>
+        </div>
+    </div>
+</form>

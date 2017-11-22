@@ -1,0 +1,22 @@
+﻿<hr />
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+                <a href="#!/nyfordon" class="btn btn-success" role="button">Skapa nytt fordon</a>
+                <tr>
+                    <th>Registreringsnummer</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                    <th>Redigera</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in vehicles | orderBy:'DriveDate'">
+                <td>{{item.RegistrationNumber}}</td>
+                <td>{{item.Active ? "Aktiv" : "Inaktiv"}}</td>
+                <td><a style="color:red;"><span ng-click="deleteVehicle(item.Id);" class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a class='btn btn-info btn-xs' href="#!/editfordon/{{item.Id}}"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
