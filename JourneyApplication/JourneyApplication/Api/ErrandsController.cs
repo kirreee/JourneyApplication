@@ -134,11 +134,10 @@ namespace JourneyApplication.Api
             {
                 return BadRequest();
             }
-            var vId = db.Vehicles.Find(errand.VehicleId);
-            errand.Vehicle = vId;
-            errand.Done = true;
-            errand.ArrivalKm = errand.ArrivalKm;
-            db.Entry(errand).State = EntityState.Modified;
+            Errand existingErrand = db.Errands.Find(errand.Id);
+            existingErrand.ArrivalKm = errand.ArrivalKm;
+            existingErrand.Done = true;
+            db.Entry(existingErrand).State = EntityState.Modified;
            
             try
             {
@@ -174,14 +173,12 @@ namespace JourneyApplication.Api
             {
                 return BadRequest("Fordonet finns ej!");
             }
-            errand.DriveDate = DateTime.Now.AddDays(7);
             ApplicationUser user = UserManager.FindById(User.Identity.GetUserId());
             errand.User = user;
             errand.Added = DateTime.Now;
 
             //Return errand to false if input field is empty.
-           if(errand.StartAdress == null
-                || DateTime.Now <= errand.DriveDate)
+            if (DateTime.Now <= errand.DriveDate)
             {
                 errand.Done = false;
             }
@@ -190,7 +187,8 @@ namespace JourneyApplication.Api
                 errand.Done = true;
             }
 
-          
+
+            
             db.Errands.Add(errand);
             db.Entry(errand.Vehicle).State = EntityState.Unchanged;
             db.SaveChanges();

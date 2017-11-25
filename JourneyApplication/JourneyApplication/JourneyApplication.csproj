@@ -216,29 +216,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711221255027_Initial.cs" />
-    <Compile Include="Migrations\201711221255027_Initial.Designer.cs">
-      <DependentUpon>201711221255027_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711221934483_Initiallls.cs" />
-    <Compile Include="Migrations\201711221934483_Initiallls.Designer.cs">
-      <DependentUpon>201711221934483_Initiallls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711240820316_update.cs" />
-    <Compile Include="Migrations\201711240820316_update.Designer.cs">
-      <DependentUpon>201711240820316_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711240844571_UpdateVehicleClass.cs" />
-    <Compile Include="Migrations\201711240844571_UpdateVehicleClass.Designer.cs">
-      <DependentUpon>201711240844571_UpdateVehicleClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711241004379_UpdateDataBase.cs" />
-    <Compile Include="Migrations\201711241004379_UpdateDataBase.Designer.cs">
-      <DependentUpon>201711241004379_UpdateDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711241017406_ChangeErrandClass.cs" />
-    <Compile Include="Migrations\201711241017406_ChangeErrandClass.Designer.cs">
-      <DependentUpon>201711241017406_ChangeErrandClass.cs</DependentUpon>
+    <Compile Include="Migrations\201711251343006_Initial.cs" />
+    <Compile Include="Migrations\201711251343006_Initial.Designer.cs">
+      <DependentUpon>201711251343006_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1142,23 +1122,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711221255027_Initial.resx">
-      <DependentUpon>201711221255027_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711221934483_Initiallls.resx">
-      <DependentUpon>201711221934483_Initiallls.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711240820316_update.resx">
-      <DependentUpon>201711240820316_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711240844571_UpdateVehicleClass.resx">
-      <DependentUpon>201711240844571_UpdateVehicleClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241004379_UpdateDataBase.resx">
-      <DependentUpon>201711241004379_UpdateDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241017406_ChangeErrandClass.resx">
-      <DependentUpon>201711241017406_ChangeErrandClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711251343006_Initial.resx">
+      <DependentUpon>201711251343006_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

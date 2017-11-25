@@ -13,7 +13,6 @@
         $scope.labels = ['0-20km', '21-50km', '50km +'];
 
         $scope.updateGraph = function () {
-            console.log("Tjenare");
             $scope.data = [];
             angular.forEach($scope.errands, function (value, key) {
                 date = value.Added;
@@ -38,7 +37,6 @@
 
         //$scope.selectedVehicle = data.errands.vehicles.Id;
         $scope.GeneratePdf = function () {
-            console.log("Tjenare");
             var data = {
                 vehicleId: $scope.selectedVehicle,
                 toDate: $scope.toDate,
@@ -62,6 +60,9 @@
         //Get All Vehicles
         $http.get("api/Vehicles").then(function (response) {
             $scope.vehicles = response.data;
+            if ($scope.vehicles < Array.length) {
+                alert('Du har ingen bil som är skapad på detta konto!');
+                }
         });
 
     });

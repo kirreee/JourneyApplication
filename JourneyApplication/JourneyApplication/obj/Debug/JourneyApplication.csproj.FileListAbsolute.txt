@@ -250,15 +250,12 @@ D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplicat
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.CoreCompileInputs.cache
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.dll
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.pdb
-D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Initial.resources
-D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.GenerateResource.Cache
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\itextsharp.dll
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\itextsharp.xml
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.Core.dll
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.Core.xml
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Initiallls.resources
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\itextsharp.dll
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.Core.dll
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
@@ -270,3 +267,5 @@ C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\Journey
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.UpdateVehicleClass.resources
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.UpdateDataBase.resources
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.ChangeErrandClass.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Initial.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.GenerateResource.Cache
