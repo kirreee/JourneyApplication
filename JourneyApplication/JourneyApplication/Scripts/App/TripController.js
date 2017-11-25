@@ -1,11 +1,10 @@
-﻿app.controller("ErrandController", function ($scope, $routeParams, $location, $http) {
+﻿app.controller("TripController", function ($scope, $routeParams, $location, $http) {
     var location = "";
     var locationUrl = "/home";
     //Get All ActiveVehicles
     $http.get("api/activeVehicles")
         .then(function (response) {
-            console.log(response.data);
-        $scope.vehicles = response.data;
+            $scope.vehicles = response.data;
         });
 
     //Geolocation
@@ -50,7 +49,7 @@
     $scope.GetCurrentPositionForUser = function () {
         $scope.errandStartAdress = location;
     }
-
+ 
 
     //POST errand
     $scope.postErrand = function () {
@@ -61,7 +60,7 @@
         var errandNote = $scope.errandNote;
         var errandStartKm = $scope.errandStartKm;
         var errandVehicle = $scope.errandVehicle;
-        var errandArrivalKm = $scope.errandArrivalKm;
+        //var errandArrivalKm = $scope.errandArrivalKm;
         var errandDriveDate = $scope.errandDriveDate.toISOString().substring(0, 10);
 
         var data = {
@@ -71,11 +70,13 @@
             "Matter": errandMatter,
             "Notes": errandNote,
             "StartKm": errandStartKm,
-            "ArrivalKm": errandArrivalKm,
+            //"ArrivalKm": errandArrivalKm,
             "VehicleId": errandVehicle,
             "errandDriveDate": errandDriveDate,
-            "Active": true
+            
         };
+
+
 
         $http.post("/api/errands", data)
             .then(function success(response) {
@@ -85,20 +86,15 @@
             });
     };
 
-    //Go Back Button
-    $scope.goBack = function () {
-        $location.path(locationUrl);
-    }
-
-
-
-
     //Update errand with id:
     $scope.updateErrand = function (errand) {
         $scope.errand = Response.data;
         $location.path(locationUrl);
     }
 
-
+    //Go Back Button
+    $scope.goBack = function () {
+        $location.path(locationUrl);
+    }
 
 });

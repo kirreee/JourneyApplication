@@ -10,11 +10,11 @@
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/App/Routing.js"></script>
     <script src="~/Scripts/App/HomeController.js"></script>
-    <script src="~/Scripts/App/EditErrandController.js"></script>
+    <script src="~/Scripts/App/StopTripController.js"></script>
     <script src="~/Scripts/App/NavigationService.js"></script>
-    <script src="~/Scripts/App/ErrandController.js"></script>
     <script src="~/Scripts/App/VehicleController.js"></script>
     <script src="~/Scripts/App/EditVehicleController.js"></script>
+    <script src="~/Scripts/App/TripController.js"></script>
     <script src="~/Scripts/App/StatsController.js"></script>
     <script src="~/Scripts/Chart.js"></script>
     <script src="~/Scripts/angular-chart.min.js"></script>
@@ -38,8 +38,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#!/start">Home</a></li>
-                        <li ng-disabled="errands.length"><a href="#!/starterrand">Skapa resa</a></li>
-                        <li><a href="#!/fordon">Skapa fordon/fordons översikt</a></li>
+                        <li ng-disabled="errands.length"><a href="#!/starttrip">Skapa resa</a></li>
+                        <li><a href="#!/vehicles">Skapa fordon/fordons översikt</a></li>
                         <li><a href="#!/stats">Statistik</a></li>
                         <li>@Html.ActionLink("Support", "UserSupport", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
 

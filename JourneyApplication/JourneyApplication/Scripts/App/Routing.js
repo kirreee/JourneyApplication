@@ -11,27 +11,27 @@ app.config(["$routeProvider",
         // Routing
         $routeProvider.
             when("/home", {
-                templateUrl: "../Partials/home.html",
+                templateUrl: "../Partials/Home.html",
                 controller: "HomeController"
             }).
-            when("/editerrand/:id", {
-                templateUrl: "../Partials/editerrand.html",
-                controller: "EditErrandController"
+            when("/endtrip/:id", {
+                templateUrl: "../Partials/EndTrip.html",
+                controller: "StopTripController"
             }).
-            when("/starterrand", {
-                templateUrl: "../Partials/starterrand.html",
-                controller: "ErrandController"
+            when("/starttrip", {
+                templateUrl: "../Partials/StartTrip.html",
+                controller: "TripController"
             }).
-            when("/fordon", {
-                templateUrl: "../Partials/fordon.html",
+            when("/vehicles", {
+                templateUrl: "../Partials/vehicles.html",
                 controller: "VehicleController"
             }).
-            when("/nyfordon", {
-                templateUrl: "../Partials/nyfordon.html",
+            when("/newvehicle", {
+                templateUrl: "../Partials/NewVehicle.html",
                 controller: "VehicleController",
             }).
-            when("/editfordon/:id", {
-                templateUrl: "../Partials/editfordon.html",
+            when("/editvehicle/:id", {
+                templateUrl: "../Partials/EditVehicle.html",
                 controller: "EditVehicleController"
             }).
             when("/stats", {

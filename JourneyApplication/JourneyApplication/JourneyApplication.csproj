@@ -224,6 +224,22 @@
     <Compile Include="Migrations\201711221934483_Initiallls.Designer.cs">
       <DependentUpon>201711221934483_Initiallls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711240820316_update.cs" />
+    <Compile Include="Migrations\201711240820316_update.Designer.cs">
+      <DependentUpon>201711240820316_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711240844571_UpdateVehicleClass.cs" />
+    <Compile Include="Migrations\201711240844571_UpdateVehicleClass.Designer.cs">
+      <DependentUpon>201711240844571_UpdateVehicleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241004379_UpdateDataBase.cs" />
+    <Compile Include="Migrations\201711241004379_UpdateDataBase.Designer.cs">
+      <DependentUpon>201711241004379_UpdateDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241017406_ChangeErrandClass.cs" />
+    <Compile Include="Migrations\201711241017406_ChangeErrandClass.Designer.cs">
+      <DependentUpon>201711241017406_ChangeErrandClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Errand.cs" />
@@ -242,12 +258,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Partials\editerrand.html" />
-    <Content Include="Partials\editfordon.html" />
-    <Content Include="Partials\fordon.html" />
-    <Content Include="Partials\home.html" />
-    <Content Include="Partials\nyfordon.html" />
-    <Content Include="Partials\starterrand.html" />
+    <Content Include="Partials\EndTrip.html" />
+    <Content Include="Partials\EditVehicle.html" />
+    <Content Include="Partials\vehicles.html" />
+    <Content Include="Partials\Home.html" />
+    <Content Include="Partials\NewVehicle.html" />
+    <Content Include="Partials\StartTrip.html" />
     <Content Include="Partials\stats.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -278,9 +294,9 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\EditErrandController.js" />
+    <Content Include="Scripts\App\StopTripController.js" />
     <Content Include="Scripts\App\EditVehicleController.js" />
-    <Content Include="Scripts\App\ErrandController.js" />
+    <Content Include="Scripts\App\TripController.js" />
     <Content Include="Scripts\App\HomeController.js" />
     <Content Include="Scripts\App\NavigationService.js" />
     <Content Include="Scripts\App\Routing.js" />
@@ -1131,6 +1147,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711221934483_Initiallls.resx">
       <DependentUpon>201711221934483_Initiallls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711240820316_update.resx">
+      <DependentUpon>201711240820316_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711240844571_UpdateVehicleClass.resx">
+      <DependentUpon>201711240844571_UpdateVehicleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241004379_UpdateDataBase.resx">
+      <DependentUpon>201711241004379_UpdateDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241017406_ChangeErrandClass.resx">
+      <DependentUpon>201711241017406_ChangeErrandClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

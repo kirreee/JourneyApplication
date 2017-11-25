@@ -61,9 +61,8 @@ namespace JourneyApplication.Api
             if (vm.VehicleId < 1)
             {
                 return null;
-
-
             }
+
             var errands = db.Errands
                 .Where(x => x.Vehicle.Id == vm.VehicleId
                 && x.Added < vm.ToDate
@@ -135,9 +134,12 @@ namespace JourneyApplication.Api
             {
                 return BadRequest();
             }
-
+            var vId = db.Vehicles.Find(errand.VehicleId);
+            errand.Vehicle = vId;
+            errand.Done = true;
+            errand.ArrivalKm = errand.ArrivalKm;
             db.Entry(errand).State = EntityState.Modified;
-
+           
             try
             {
                 db.SaveChanges();
@@ -153,6 +155,7 @@ namespace JourneyApplication.Api
                     throw;
                 }
             }
+
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -176,6 +179,18 @@ namespace JourneyApplication.Api
             errand.User = user;
             errand.Added = DateTime.Now;
 
+            //Return errand to false if input field is empty.
+           if(errand.StartAdress == null
+                || DateTime.Now <= errand.DriveDate)
+            {
+                errand.Done = false;
+            }
+            else
+            {
+                errand.Done = true;
+            }
+
+          
             db.Errands.Add(errand);
             db.Entry(errand.Vehicle).State = EntityState.Unchanged;
             db.SaveChanges();

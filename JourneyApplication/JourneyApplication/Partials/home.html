@@ -1,7 +1,7 @@
 ﻿<h3>Pågående resor!</h3>
 <h4 ng-show="errands.length" style="color:red;">Du måste avsluta din pågående resa innan du kan starta nytt.</h4>
 <hr />
-<a href="#!/starterrand" class="btn btn-success" role="button" ng-disabled="errands.length" ng-click="getuserVehicle()">Skapa nytt ärende</a>
+<a href="#!/starttrip" class="btn btn-success" role="button" ng-disabled="errands.length" ng-click="getuserVehicle()">Skapa nytt ärende</a>
 <div class="container" id="checkIfEmpty">
     <div class="row col-md-6 col-md-offset-2 custyle">
         <table class="table table-striped custab">
@@ -10,14 +10,14 @@
                     <th>Regnummer</th>
                     <th>Destination</th>
                     <th>Kördatum</th>
-                    <th>Redigera</th>
+                    <th>Avsluta resa</th>
                 </tr>
             </thead>
             <tr ng-repeat="item in errands">
                 <td>{{item.Vehicle.RegistrationNumber}}</td>
                 <td>{{item.Destination}}</td>
                 <td>{{item.DriveDate | date: MM-dd-YYYY}}</td>
-                <td><a class='btn btn-info btn-xs' ng-click="editErrand()" href="#!/editerrand/{{item.Id}}"><span class="glyphicon glyphicon-edit"></span> Edit</a> </td>
+                <td><a class='btn btn-danger btn-xs' ng-click="editErrand()" href="#!/endtrip/{{item.Id}}"><span class="glyphicon glyphicon-edit"></span>Avsluta resa</a> </td>
             </tr>
         </table>
     </div>
