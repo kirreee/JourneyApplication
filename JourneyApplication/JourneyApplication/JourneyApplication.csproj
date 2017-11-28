@@ -295,23 +295,44 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\StopTripController.js" />
-    <Content Include="Scripts\App\EditVehicleController.js" />
-    <Content Include="Scripts\App\TripController.js" />
+    <Content Include="Scripts\App\mini\appbundle.js" />
+    <Content Include="Scripts\App\mini\appbundle.min.js">
+      <DependentUpon>appbundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Routing.js" />
+    <Content Include="Scripts\App\TripControllers\StopTripController.js" />
+    <Content Include="Scripts\App\mini\tripcontrollersbundle.js" />
+    <Content Include="Scripts\App\mini\tripcontrollersbundle.min.js">
+      <DependentUpon>tripcontrollersbundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\TripControllers\tripcontrollersbundle.js" />
+    <Content Include="Scripts\App\TripControllers\tripcontrollersbundle.min.js">
+      <DependentUpon>tripcontrollersbundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\VehicleControllers\EditVehicleController.js" />
+    <Content Include="Scripts\App\TripControllers\TripController.js" />
     <Content Include="Scripts\App\HomeController.js" />
     <Content Include="Scripts\App\NavigationService.js" />
-    <Content Include="Scripts\App\Routing.js" />
     <Content Include="Scripts\App\StatsController.js" />
-    <Content Include="Scripts\App\VehicleController.js" />
+    <Content Include="Scripts\App\VehicleControllers\VehicleController.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\angular-chart.min.js.map" />
     <Content Include="Content\MySite.less" />
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Scripts\App\mini\vehiclecontrollersbundle.js" />
+    <Content Include="Scripts\App\mini\vehiclecontrollersbundle.min.js">
+      <DependentUpon>vehiclecontrollersbundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\VehicleControllers\vehiclecontrollersbundle.js" />
+    <Content Include="Scripts\App\VehicleControllers\vehiclecontrollersbundle.min.js">
+      <DependentUpon>vehiclecontrollersbundle.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Chart.js" />

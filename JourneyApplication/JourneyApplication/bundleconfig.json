@@ -1,0 +1,25 @@
+[
+  {
+    "outputFileName": "Scripts/App/TripControllers/tripcontrollersbundle.js",
+    "inputFiles": [
+      "Scripts/App/TripControllers/TripController.js",
+      "Scripts/App/TripControllers/StopTripController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/App/VehicleControllers/vehiclecontrollersbundle.js",
+    "inputFiles": [
+      "Scripts/App/VehicleControllers/VehicleController.js",
+      "Scripts/App/VehicleControllers/EditVehicleController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/App/appbundle.js",
+    "inputFiles": [
+      "Scripts/App/Routing.js",
+      "Scripts/App/HomeController.js",
+      "Scripts/App/NavigationService.js",
+      "Scripts/App/StatsController.js"
+    ]
+  }
+]

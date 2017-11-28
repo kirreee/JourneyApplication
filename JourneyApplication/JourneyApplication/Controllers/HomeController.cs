@@ -20,15 +20,6 @@ namespace JourneyApplication.Controllers
             Log.Warn("log Warn");
             Log.Error("log Error");
             Log.Fatal("log Fatal");
-            try
-            {
-                object m = null;
-                string s = m.ToString();
-            }
-            catch (Exception ex)
-            {
-                Log.Error("An eddsfdsf", ex);
-            }
             return View();
         }
 
