@@ -117,10 +117,7 @@ namespace JourneyApplication.Api
         [ResponseType(typeof(Vehicle))]
         public IHttpActionResult DeleteVehicle(int id)
         {
-            var vehicle = db.Vehicles.SingleOrDefault(x => x.Id == id);
-            var errand = db.Errands
-                .Where(x => x.Vehicle.Id == vehicle.Id)
-                .ToList();
+            Vehicle vehicle = db.Vehicles.Find(id);
             if (vehicle == null)
             {
                 return NotFound();

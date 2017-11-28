@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/MySite.less" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
@@ -33,25 +34,46 @@
                 </button>
                 @Html.ActionLink("Journey", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", })
             </div>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#!/start">Home</a></li>
-                        <li ng-disabled="errands.length"><a href="#!/starttrip">Skapa resa</a></li>
-                        <li><a href="#!/vehicles">Skapa fordon/fordons översikt</a></li>
-                        <li><a href="#!/stats">Statistik</a></li>
-                        <li>@Html.ActionLink("Support", "UserSupport", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
+           @if (User.Identity.Name == "admin@live.se")
+           {
+               if (User.Identity.IsAuthenticated)
+               {
 
-                    </ul>
 
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#!/start">Home</a></li>
+                            <li ng-disabled="errands.length"><a href="#!/starttrip">Skapa resa</a></li>
+                            <li><a href="#!/vehicles">Skapa fordon/fordons översikt</a></li>
+                            <li><a href="#!/stats">Statistik</a></li>
+                            <li>@Html.ActionLink("Support", "AdminSupport", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
+
+                        </ul>
+
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                }
+
+                else
+                {
                     @Html.Partial("_LoginPartial")
-                </div>
-            }
-            else
-            {
+               }
+           }
+           else
+           {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#!/start">Home</a></li>
+                    <li ng-disabled="errands.length"><a href="#!/starttrip">Skapa resa</a></li>
+                    <li><a href="#!/vehicles">Skapa fordon/fordons översikt</a></li>
+                    <li><a href="#!/stats">Statistik</a></li>
+                    <li>@Html.ActionLink("Support", "UserSupport", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
+
+                </ul>
+
                 @Html.Partial("_LoginPartial")
-            }
+            </div>
+           }
 
         </div>
 

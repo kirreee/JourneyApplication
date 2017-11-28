@@ -267,5 +267,13 @@ C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\Journey
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.UpdateVehicleClass.resources
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.UpdateDataBase.resources
 C:\Users\Kirree\Documents\Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.ChangeErrandClass.resources
-D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Initial.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Inital.resources
 D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.GenerateResource.Cache
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Updatedatabase.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.updateee.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\log4net.dll
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\bin\log4net.xml
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.fios.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.weeyy.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.wu.resources
+D:\Programmerings Projects\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.wis.resources

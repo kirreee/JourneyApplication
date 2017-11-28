@@ -4,7 +4,7 @@
     //Get All Vehicles.
     $http.get("api/Vehicles").then(function (response) {
         $scope.vehicles = response.data;
-        console.log(response.data);
+        console.log("Get Vehicles Sucess!");
     });
 
     $scope.postVehicle = function (vehicle) {

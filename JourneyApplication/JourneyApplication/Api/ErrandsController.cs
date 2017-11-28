@@ -15,11 +15,14 @@ using iTextSharp.text.pdf;
 using System.Web;
 using iTextSharp.text;
 using System.IO;
+using log4net;
 
 namespace JourneyApplication.Api
 {
     public class ErrandsController : ApiController
     {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private ApplicationDbContext db = new ApplicationDbContext();
         protected UserManager<ApplicationUser> UserManager { get; set; }
 
@@ -31,12 +34,22 @@ namespace JourneyApplication.Api
         // GET: api/Errands
         public IHttpActionResult GetErrands()
         {
-            var userId = User.Identity.GetUserId();
-            var errands = db.Errands
-                .Include(x => x.Vehicle)
-                .Where(x => x.Vehicle.User.Id == userId)
-                .ToList();
-            return Ok(errands);
+
+            try
+            {
+                var userId = User.Identity.GetUserId();
+                var errands = db.Errands
+                    .Include(x => x.Vehicle)
+                    .Where(x => x.Vehicle.User.Id == userId)
+                    .ToList();
+                return Ok(errands);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex + "Error Message from log4net");
+                throw ex;
+
+            }
         }
 
         //GET: api/Errands-ongoing
@@ -44,13 +57,22 @@ namespace JourneyApplication.Api
         [HttpGet]
         public IHttpActionResult GetOngoingErrands()
         {
-            var userId = User.Identity.GetUserId();
-            var errands = db.Errands
-                .Include(x => x.Vehicle)
-                .Where(x => x.User.Id == userId
-                && x.Done == false)
-                .ToList();
-            return Ok(errands);
+            try
+            {
+                var userId = User.Identity.GetUserId();
+                var errands = db.Errands
+                    .Include(x => x.Vehicle)
+                    .Where(x => x.User.Id == userId
+                    && x.Done == false)
+                    .ToList();
+                return Ok(errands);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex + "Error Message from log4net");
+                throw ex;
+
+            }
         }
 
 
@@ -79,7 +101,6 @@ namespace JourneyApplication.Api
             table.AddCell("StartKm");
             table.AddCell("ArrivalKm");
             table.AddCell("Added");
-            var printVar = "Fordon: " + errands[0].Vehicle.RegistrationNumber + "\n \n";
 
             foreach (var errand in errands)
             {
@@ -106,19 +127,29 @@ namespace JourneyApplication.Api
 
 
             return Ok("/PDF/" + guidUrl);
+
         }
 
         // GET: api/Errands/5
         [ResponseType(typeof(Errand))]
         public IHttpActionResult GetErrand(int id)
         {
-            Errand errand = db.Errands.Find(id);
-            if (errand == null)
+            try
             {
-                return NotFound();
-            }
+                Errand errand = db.Errands.Find(id);
+                if (errand == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(errand);
+                return Ok(errand);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex + "Error Message from log4net");
+                throw ex;
+
+            }
         }
 
         // PUT: api/Errands/5
@@ -134,11 +165,12 @@ namespace JourneyApplication.Api
             {
                 return BadRequest();
             }
-            Errand existingErrand = db.Errands.Find(errand.Id);
-            existingErrand.ArrivalKm = errand.ArrivalKm;
-            existingErrand.Done = true;
-            db.Entry(existingErrand).State = EntityState.Modified;
-           
+            var vId = db.Vehicles.Find(errand.VehicleId);
+            errand.Vehicle = vId;
+            errand.Done = true;
+            errand.ArrivalKm = errand.ArrivalKm;
+            db.Entry(errand).State = EntityState.Modified;
+
             try
             {
                 db.SaveChanges();
@@ -167,31 +199,67 @@ namespace JourneyApplication.Api
             {
                 return BadRequest(ModelState);
             }
+
+            ApplicationUser user = UserManager.FindById(User.Identity.GetUserId());
+            errand.User = user;
+            if (errand.User == null)
+            {
+                return Unauthorized();
+            }
+
+            errand.Added = DateTime.Now;
+            errand.Done = false;
+
+            errand.DriveDate = errand.DriveDate.AddDays(1);
+            if (errand.DriveDate < DateTime.Now)
+            {
+                return Ok("Error");
+            }
+
             var vehicle = db.Vehicles.Find(errand.VehicleId);
             errand.Vehicle = vehicle;
             if (vehicle == null)
             {
                 return BadRequest("Fordonet finns ej!");
             }
-            ApplicationUser user = UserManager.FindById(User.Identity.GetUserId());
-            errand.User = user;
-            errand.Added = DateTime.Now;
 
-            //Return errand to false if input field is empty.
-            if (DateTime.Now <= errand.DriveDate)
+
+            if (db.Errands.Where(x => x.Vehicle.Id == vehicle.Id).Count() > 0)
             {
-                errand.Done = false;
+
+                try
+                {
+                    //Get lastDriveDate
+                    var lastErrandDriveDate = db.Errands
+                        .Where(x => x.Vehicle.Id == vehicle.Id)
+                        .Max(x => x.DriveDate);
+
+                    //Get Last ErrandDriveDate
+                    var lastErrand = db.Errands
+                        .Where(x => x.DriveDate == lastErrandDriveDate)
+                        .First();
+
+                    if (errand.StartKm < lastErrand.ArrivalKm)
+                    {
+                        return Ok("Warning");
+                    }
+                    db.Errands.Add(errand);
+                    db.Entry(errand.Vehicle).State = EntityState.Unchanged;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex + "Error Message from log4net");
+
+                }
             }
             else
             {
-                errand.Done = true;
+                db.Errands.Add(errand);
+                db.Entry(errand.Vehicle).State = EntityState.Unchanged;
+                db.SaveChanges();
+                return Ok("Warn");
             }
-
-
-            
-            db.Errands.Add(errand);
-            db.Entry(errand.Vehicle).State = EntityState.Unchanged;
-            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = errand.Id }, errand);
         }

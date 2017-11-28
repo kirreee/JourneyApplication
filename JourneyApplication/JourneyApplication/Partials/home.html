@@ -10,7 +10,6 @@
                     <th>Regnummer</th>
                     <th>Destination</th>
                     <th>Kördatum</th>
-                    <!--<th>SlutKm</th>-->
                     <th>Avsluta resa</th>
                 </tr>
             </thead>
@@ -18,7 +17,6 @@
                 <td>{{item.Vehicle.RegistrationNumber}}</td>
                 <td>{{item.Destination}}</td>
                 <td>{{item.DriveDate | date: MM-dd-YYYY}}</td>
-                <!--<td>{{item.ArrivalKm}}</td>-->
                 <td><a class='btn btn-danger btn-xs' ng-click="editErrand()" href="#!/endtrip/{{item.Id}}"><span class="glyphicon glyphicon-edit"></span>Avsluta resa</a> </td>
             </tr>
         </table>

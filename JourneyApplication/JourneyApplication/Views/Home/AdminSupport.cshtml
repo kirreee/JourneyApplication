@@ -1,7 +1,7 @@
 ﻿
 <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
 <script src="~/SignalR/hubs"></script>
-<h2>UserSupport</h2>
+<h2>Admin Support</h2>
 <hr />
 <div class="input-group start-adress-container">
     <input type="text" id="message" class="form-control" placeholder="Skriv något..." required="">
@@ -9,6 +9,8 @@
         <input type="button" id="sendmessage" value="Skicka" class="btn btn-primary" />
     </span>
 </div>
+<li>@Html.ActionLink("Lämna chatten!", "Index", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
+
 <hr />
 <input type="hidden" id="displayname" />
 <ul id="discussion"></ul>
@@ -17,7 +19,7 @@
 
     $(function () {
         var chat = $.connection.supportHub;
-        $.connection.hub.qs = { 'Admin': "chickens@live.se" };
+        $.connection.hub.qs = { 'Admin': "admin@live.se" };
 
         chat.client.broadcastMessage = function (name, message) {
             var encodeName = $('<div />').text(name).html();
@@ -26,7 +28,7 @@
                 + '</strong>:&nbsp;&nbsp;' + encodeMsg + '</li>');
         };
 
-        $('#displayname').val("User");
+        $('#displayname').val("Admin");
 
         $('#message').focus();
 

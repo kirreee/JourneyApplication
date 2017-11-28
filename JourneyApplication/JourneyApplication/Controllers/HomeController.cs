@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,26 @@ namespace JourneyApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
+            log4net.Config.XmlConfigurator.Configure();
+            Log.Debug("log Debug");
+            Log.Info("log Info");
+            Log.Warn("log Warn");
+            Log.Error("log Error");
+            Log.Fatal("log Fatal");
+            try
+            {
+                object m = null;
+                string s = m.ToString();
+            }
+            catch (Exception ex)
+            {
+                Log.Error("An eddsfdsf", ex);
+            }
             return View();
         }
 

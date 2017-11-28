@@ -17,10 +17,9 @@ namespace JourneyApplication.Models
         public int ArrivalKm { get; set; }
         public bool Done { get; set; }
         public DateTime Added { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
+        public Vehicle Vehicle { get; set; }
         public virtual ApplicationUser User { get; set; }
         public DateTime DriveDate { get; set; }
-
         [NotMapped]
         public int VehicleId { get; set; }
         public Errand()

@@ -1,13 +1,10 @@
 ﻿app.controller("TripController", function ($scope, $routeParams, $location, $http) {
     var location = "";
     var locationUrl = "/home";
-
-
     //Get All ActiveVehicles
     $http.get("api/activeVehicles")
         .then(function (response) {
             $scope.vehicles = response.data;
-
         });
 
     //Geolocation
@@ -43,8 +40,6 @@
         }
 
     }
-
-
     //Get current location
     getLocation(function (address) {
         location = address;
@@ -55,9 +50,14 @@
         $scope.errandStartAdress = location;
     }
 
+   
+
+
+    
+
     //POST errand
     $scope.postErrand = function () {
-
+        
         var location = "";
         var errandStartAdress = $scope.errandStartAdress;
         var errandDestination = $scope.errandDestination;
@@ -65,7 +65,8 @@
         var errandNote = $scope.errandNote;
         var errandStartKm = $scope.errandStartKm;
         var errandVehicle = $scope.errandVehicle;
-        var errandDriveDate = $scope.errandDriveDate.toISOString().split('T')[0];
+        var errandDriveDate = $scope.errandDriveDate;
+
         var data = {
             "ErrandId": 0,
             "StartAdress": errandStartAdress,
@@ -73,13 +74,21 @@
             "Matter": errandMatter,
             "Notes": errandNote,
             "StartKm": errandStartKm,
+            "DriveDate": errandDriveDate,
             "VehicleId": errandVehicle,
-            "DriveDate": errandDriveDate
-
         };
 
-        $http.post("/api/errands", data)
+        $http.post("/api/errands", data, { headers: { 'Content-Type': 'application/json' } })
             .then(function success(response) {
+                if (response.data === 'Error') {
+                    return alert('Kördatum får inte ha paserat dagens datm, försök igen!');
+                }
+                if (response.data === 'Warning') {
+                    return alert('Startkm kan inte vara högre än föregånde resa!');
+                }
+                if (response.data === "Warn") {
+                    $location.path(locationUrl);
+                }
                 console.log("New errand created sucess!");
                 $location.path(locationUrl);
 

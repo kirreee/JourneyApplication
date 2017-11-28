@@ -9,16 +9,14 @@
         <input type="button" id="sendmessage" value="Skicka" class="btn btn-primary" />
     </span>
 </div>
+<li>@Html.ActionLink("Lämna chatten!", "Index", "Home", routeValues: null, htmlAttributes: new { id = "adminSupportlink" })</li>
 <hr />
 <input type="hidden" id="displayname" />
 <ul id="discussion"></ul>
 <script type="text/javascript">
-
-
     $(function () {
         var chat = $.connection.supportHub;
         $.connection.hub.qs = { 'user': "users" };
-
         chat.client.broadcastMessage = function (name, message) {
             var encodeName = $('<div />').text(name).html();
             var encodeMsg = $('<div />').text(message).html();
