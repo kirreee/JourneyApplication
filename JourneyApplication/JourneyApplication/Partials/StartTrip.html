@@ -3,8 +3,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="vehicle">Bil:</label>
         <div class="col-sm-10">
-            <select id="driverName" ng-model="errandVehicle"
-                    ng-options="item.Id as item.RegistrationNumber for item in vehicles" ng-selected="item.Id" ng-required="required" class="form-control"></select>
+            <select id="driverName" ng-model="errandVehicle"ng-options="item.Id as item.RegistrationNumber for item in vehicles" ng-selected="item.Id" ng-required="required"  value="-1" class="form-control"></select>
         </div>
     </div>
     <hr />
