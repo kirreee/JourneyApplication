@@ -5,7 +5,7 @@
         .then(function succes(response) {
             $scope.errands = response.data;
         }, function (error) {
-            console.log("Något gick fel!");
+            alert("Något gick fel!");
         }
         );
 

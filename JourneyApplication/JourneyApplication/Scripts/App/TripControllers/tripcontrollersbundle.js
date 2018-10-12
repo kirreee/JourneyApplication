@@ -13,7 +13,7 @@ app.controller("TripController", function ($scope, $routeParams, $location, $htt
             navigator.geolocation.getCurrentPosition(showPosition, error);
         }
         else {
-            console.log("Your browser does not support Geolocation!, Try antoher.");
+            alert("Your browser does not support Geolocation!,Try another.");
         }
 
         //Error function
@@ -31,15 +31,16 @@ app.controller("TripController", function ($scope, $routeParams, $location, $htt
                     if (results[0]) {
                         callback(results[0].formatted_address);
                     } else {
-                        console.log("No match!");
+                        alert("No match!");
                     }
                 } else {
-                    console.log("Error!");
+                    alert("Error!");
                 }
             });
         }
 
     }
+
     //Get current location
     getLocation(function (address) {
         location = address;
@@ -49,11 +50,6 @@ app.controller("TripController", function ($scope, $routeParams, $location, $htt
     $scope.GetCurrentPositionForUser = function () {
         $scope.errandStartAdress = location;
     }
-
-   
-
-
-    
 
     //POST errand
     $scope.postErrand = function () {
@@ -114,9 +110,9 @@ app.controller("StopTripController", function ($scope, $routeParams, $location, 
     $http.get("api/errands/" + $routeParams.id).then(function (response) {
         $scope.errand = response.data;
         if ($scope.errand <= 0) {
-            console.log("Något gick fel");
+            alert("Något gick fel!");
         }
-        console.log("Get errand with specific id: Succes!");
+        alert("Get errand with specific id: Succes!");
 
     });
 
@@ -124,7 +120,7 @@ app.controller("StopTripController", function ($scope, $routeParams, $location, 
     $scope.updateErrand = function (errand) {
         $http.put("api/errands/" + errand.Id, errand).then(function (response) {
             $scope.errand = response.data;
-            console.log("Update errand success!");
+            alert("Update errand success!");
             $location.path(url);
 
         });

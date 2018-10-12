@@ -5,10 +5,9 @@
     $http.get("api/vehicles/" + $routeParams.id).then(function (response) {
         $scope.vehicle = response.data;
         if ($scope.vehicle <= 0) {
-            console.log("Något gick fel");
-        }
-        console.log("Get vehicle with specific id: Succes!");
+            alert("Något gick fel");
 
+        }
     });
 
     //Update Vehicle

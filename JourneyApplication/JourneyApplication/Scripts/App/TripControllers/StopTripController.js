@@ -5,9 +5,9 @@
     $http.get("api/errands/" + $routeParams.id).then(function (response) {
         $scope.errand = response.data;
         if ($scope.errand <= 0) {
-            console.log("Något gick fel");
+            alert("Något gick fel!");
         }
-        console.log("Get errand with specific id: Succes!");
+        alert("Get errand with specific id: Succes!");
 
     });
 
@@ -15,7 +15,7 @@
     $scope.updateErrand = function (errand) {
         $http.put("api/errands/" + errand.Id, errand).then(function (response) {
             $scope.errand = response.data;
-            console.log("Update errand success!");
+            alert("Update errand sucess!");
             $location.path(url);
 
         });

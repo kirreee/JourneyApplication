@@ -208,33 +208,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711271638309_Inital.cs" />
-    <Compile Include="Migrations\201711271638309_Inital.Designer.cs">
-      <DependentUpon>201711271638309_Inital.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272031063_Update-database.cs" />
-    <Compile Include="Migrations\201711272031063_Update-database.Designer.cs">
-      <DependentUpon>201711272031063_Update-database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272036138_updateee.cs" />
-    <Compile Include="Migrations\201711272036138_updateee.Designer.cs">
-      <DependentUpon>201711272036138_updateee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272320398_fios.cs" />
-    <Compile Include="Migrations\201711272320398_fios.Designer.cs">
-      <DependentUpon>201711272320398_fios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272359406_weeyy.cs" />
-    <Compile Include="Migrations\201711272359406_weeyy.Designer.cs">
-      <DependentUpon>201711272359406_weeyy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711281026037_wu.cs" />
-    <Compile Include="Migrations\201711281026037_wu.Designer.cs">
-      <DependentUpon>201711281026037_wu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711281050468_wis.cs" />
-    <Compile Include="Migrations\201711281050468_wis.Designer.cs">
-      <DependentUpon>201711281050468_wis.cs</DependentUpon>
+    <Compile Include="Migrations\201810091419318_Initial.cs" />
+    <Compile Include="Migrations\201810091419318_Initial.Designer.cs">
+      <DependentUpon>201810091419318_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1162,26 +1138,8 @@
     <Folder Include="Pdf\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711271638309_Inital.resx">
-      <DependentUpon>201711271638309_Inital.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272031063_Update-database.resx">
-      <DependentUpon>201711272031063_Update-database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272036138_updateee.resx">
-      <DependentUpon>201711272036138_updateee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272320398_fios.resx">
-      <DependentUpon>201711272320398_fios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272359406_weeyy.resx">
-      <DependentUpon>201711272359406_weeyy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711281026037_wu.resx">
-      <DependentUpon>201711281026037_wu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711281050468_wis.resx">
-      <DependentUpon>201711281050468_wis.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810091419318_Initial.resx">
+      <DependentUpon>201810091419318_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

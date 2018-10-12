@@ -13,7 +13,7 @@
             navigator.geolocation.getCurrentPosition(showPosition, error);
         }
         else {
-            console.log("Your browser does not support Geolocation!, Try antoher.");
+            alert("our browser does not support Geolocation!, Try antoher.");
         }
 
         //Error function
@@ -30,12 +30,11 @@
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
                         callback(results[0].formatted_address);
-                    } else {
-                        console.log("No match!");
                     }
-                } else {
-                    console.log("Error!");
-                }
+                    else {
+                        alert("No match!");
+                    }
+                } 
             });
         }
 
@@ -49,11 +48,6 @@
     $scope.GetCurrentPositionForUser = function () {
         $scope.errandStartAdress = location;
     }
-
-   
-
-
-    
 
     //POST errand
     $scope.postErrand = function () {
@@ -89,7 +83,7 @@
                 if (response.data === "Warn") {
                     $location.path(locationUrl);
                 }
-                console.log("New errand created sucess!");
+                alert("New errand created sucess!");
                 $location.path(locationUrl);
 
             });

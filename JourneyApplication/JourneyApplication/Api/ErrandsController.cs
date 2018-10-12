@@ -224,7 +224,7 @@ namespace JourneyApplication.Api
             }
 
 
-            if (db.Errands.Where(x => x.Vehicle.Id == vehicle.Id).Count() > 0)
+            if (db.Errands.Any(x => x.Vehicle.Id == vehicle.Id))
             {
 
                 try
@@ -236,8 +236,7 @@ namespace JourneyApplication.Api
 
                     //Get Last ErrandDriveDate
                     var lastErrand = db.Errands
-                        .Where(x => x.DriveDate == lastErrandDriveDate)
-                        .First();
+                        .First(x => x.DriveDate == lastErrandDriveDate);
 
                     if (errand.StartKm < lastErrand.ArrivalKm)
                     {
