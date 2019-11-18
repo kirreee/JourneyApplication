@@ -208,9 +208,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810091419318_Initial.cs" />
-    <Compile Include="Migrations\201810091419318_Initial.Designer.cs">
-      <DependentUpon>201810091419318_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201811200840300_Initial.cs" />
+    <Compile Include="Migrations\201811200840300_Initial.Designer.cs">
+      <DependentUpon>201811200840300_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1138,8 +1138,8 @@
     <Folder Include="Pdf\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810091419318_Initial.resx">
-      <DependentUpon>201810091419318_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811200840300_Initial.resx">
+      <DependentUpon>201811200840300_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

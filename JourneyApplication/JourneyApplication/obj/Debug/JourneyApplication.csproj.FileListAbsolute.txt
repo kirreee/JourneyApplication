@@ -406,9 +406,10 @@ C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApp
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\bin\System.Web.WebPages.xml
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\bin\System.Web.WebPages.Deployment.xml
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\bin\System.Web.WebPages.Razor.xml
-C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.CoreCompileInputs.cache
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.dll
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.pdb
+C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csprojAssemblyReference.cache
+C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.CopyComplete
 C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.Migrations.Initial.resources
-C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.GenerateResource.Cache
+C:\Users\David\Documents\GitHub\JourneyApplication\JourneyApplication\JourneyApplication\obj\Debug\JourneyApplication.csproj.GenerateResource.cache
